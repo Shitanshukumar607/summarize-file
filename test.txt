@@ -1,0 +1,12 @@
+The Summarize CLI is a Node.js command-line tool designed to generate concise summaries of text files using AI models like Google Gemini or OpenAI GPT. 
+Users can simply run a command such as "npx summarize ./article.txt" to automatically summarize the given file. 
+The tool first checks whether the user has a Gemini API key stored in their system environment variables. 
+If it finds one, it uses the Gemini API to process and summarize the file. 
+If no Gemini key is found, it checks for an OpenAI API key and uses that instead.
+
+In cases where neither key is available, the CLI provides an easy setup command: "npx summarize --setup". 
+This setup flow allows users to choose between Gemini or OpenAI, input their API key, and automatically save it for future use. 
+The tool then instructs the user to restart the terminal so the environment variables can take effect.
+
+The goal of the Summarize CLI project is to simplify the process of summarizing text documents without requiring users to manually call APIs or write code. 
+It’s especially useful for developers, students, and researchers who need quick summaries of long articles or documentation files directly from the terminal.

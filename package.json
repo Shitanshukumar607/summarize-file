@@ -1,0 +1,30 @@
+{
+  "name": "summarize-file",
+  "version": "1.0.1",
+  "description": "Summarize files using Gemini or OpenAI from CLI",
+  "main": "bin/cli.js",
+  "bin": {
+    "summarize": "./bin/cli.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^1.25.0"
+  },
+  "keywords": [
+    "terminal",
+    "ai",
+    "summarize",
+    "files",
+    "summarizer",
+    "cli"
+  ],
+  "author": "Shitanshu Kumar",
+  "prettier": {
+    "printWidth": 100,
+    "useTabs": true,
+    "tabWidth": 2,
+    "semi": false,
+    "arrowParens": "avoid",
+    "requirePragma": true
+  }
+}
