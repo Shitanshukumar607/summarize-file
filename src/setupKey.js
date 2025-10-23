@@ -50,7 +50,7 @@ export async function setupKey() {
       fs.appendFileSync(shellFile, exportLine);
 
       console.log(`- ${keyType} added to ${path.basename(shellFile)}.`);
-      console.log("- Run 'source ~/.bashrc' or restart your terminal to apply.\n");
+      console.log(`- Run 'source ~/${path.basename(shellFile)}' or restart your terminal to apply.\n`);
     }
   } catch (err) {
     console.error("Error: Failed to set environment variable.");
