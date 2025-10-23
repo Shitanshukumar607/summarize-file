@@ -30,8 +30,21 @@ export async function summarizeGemini(content, apiKey) {
     console.log("Summary:\n");
     console.log(text.trim());
   } catch (error) {
-    console.error("An error occurred while summarizing:");
-    console.error(error.message || error);
+    const e = JSON.parse(error?.message);
+
+    if (e?.error?.message?.includes("quota")) {
+      console.error(
+        "\nQuota exceeded. Please check your Google usage and limits."
+      );
+
+    } else if (e?.error?.message === "API key not valid. Please pass a valid API key.") {
+      console.error("\nAPI key is not valid. Use `npx summarize --setup` to setup API key.");
+
+    } else {
+      console.error("An error occurred while summarizing:");
+      console.error(e?.error?.message || error);
+    }
+
     process.exit(1);
   }
 }
