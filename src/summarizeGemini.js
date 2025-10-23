@@ -37,7 +37,7 @@ export async function summarizeGemini(content, apiKey) {
         "\nQuota exceeded. Please check your Google usage and limits."
       );
 
-    } else if (e?.error?.message == "API key not valid. Please pass a valid API key.") {
+    } else if (e?.error?.message === "API key not valid. Please pass a valid API key.") {
       console.error("\nAPI key is not valid. Use `npx summarize --setup` to setup API key.");
 
     } else {
