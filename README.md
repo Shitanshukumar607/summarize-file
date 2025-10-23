@@ -1,19 +1,42 @@
 ## 🧠 summarize-file
 
-Summarize any text file using **Gemini** or **OpenAI** just from CLI.
+Summarize any text file using **Gemini** or **OpenAI** directly from your terminal.
 
 ```bash
 npx summarize ./file.txt
 ```
 
-## 🧰 Requirements
+---
 
-- **Node.js ≥ 18**
-- **Internet connection**
-- A valid **Gemini** or **OpenAI** API key stored in your environment variables
+## ⚙️ Setup API Key
 
-## 🙅‍♀️ No API key?
+Before running the summarizer, set up your API key for **Gemini** or **OpenAI**.
 
 ```bash
-npx summarize --setup # will be implemented soon
+npx summarize --setup
 ```
+
+This command launches an interactive prompt to securely store your API key in your system environment variables.
+
+---
+
+## 🧰 Requirements
+
+* **Node.js ≥ 18**
+* **Internet connection**
+* A valid **Gemini** or **OpenAI** API key stored in your environment variables
+
+---
+
+## 🔑 Example
+
+```bash
+npx summarize ./notes.txt
+```
+
+If your API key isn’t already set, run:
+
+```bash
+npx summarize --setup
+```
+
