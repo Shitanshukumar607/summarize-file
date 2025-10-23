@@ -1,6 +1,6 @@
 {
   "name": "summarize-file",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Summarize files using Gemini or OpenAI from CLI",
   "main": "bin/cli.js",
   "bin": {
@@ -11,7 +11,8 @@
     "test" : "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@google/genai": "^1.25.0"
+    "@google/genai": "^1.25.0",
+    "inquirer": "^12.10.0"
   },
   "keywords": [
     "terminal",
@@ -25,7 +26,6 @@
   "repository": {
     "url": "git+https://github.com/Shitanshukumar607/summarize-file.git"
   },
-  "devDependencies": {},
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Shitanshukumar607/summarize-file/issues"
