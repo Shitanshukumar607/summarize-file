@@ -43,7 +43,16 @@ export async function setupKey() {
       // for macOS and Linux
       const bashrcPath = path.join(os.homedir(), ".bashrc");
       const zshrcPath = path.join(os.homedir(), ".zshrc");
-      const shellFile = fs.existsSync(zshrcPath) ? zshrcPath : bashrcPath;
+      let shellFile;
+      if (fs.existsSync(zshrcPath)) {
+        shellFile = zshrcPath;
+      } else if (fs.existsSync(bashrcPath)) {
+        shellFile = bashrcPath;
+      } else {
+        // If neither file exists, create .bashrc
+        fs.writeFileSync(bashrcPath, "");
+        shellFile = bashrcPath;
+      }
 
       const exportLine = `\n# Added by file-summarize CLI\nexport ${keyType}="${key}"\n`;
 
